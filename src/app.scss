@@ -1,0 +1,114 @@
+@import "~normalize.css/normalize.css";
+
+$primary-color: #409677;
+$second-color: rgb(83, 190, 87);
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.calculator {
+  background: #fff;
+  display: block;
+  width: 500px;
+
+  &__title {
+    padding: 1rem;
+    color: #fff;
+    //background-color: rgb(83, 190, 87);
+    background: linear-gradient(to left, $primary-color, $second-color);
+    border-radius: .7rem .7rem 0 0;
+  }
+
+  &__body {
+    padding: 1rem;
+  }
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calculator-selector {
+  margin-bottom: 2rem;
+
+  &__label {
+    padding: 0 16px;
+  }
+
+  &__slider {}
+}
+
+.slider {
+  .vue-slider {
+    height: 2rem!important;
+
+    .vue-slider-process {
+      background-color: $second-color;
+    }
+    .vue-slider-dot {
+      top: 0!important;
+      box-shadow: 0 0 0 3px $primary-color;
+    }
+    .vue-slider-dot.vue-slider-dot-focus {
+      top: 0!important;
+      box-shadow: 0 0 0 3px #fff, 0 0 0 6px $primary-color;
+    }
+  }
+}
+
+.container {
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-start;
+  align-items:stretch;
+
+  &__column {
+    max-width: 50%;
+    width: 50%;
+
+    &--right {
+      padding: 0 1rem;
+      align-self: center;
+    }
+  }
+}
+
+.btn {
+  font-size: 1.4rem;
+  background-color: $primary-color;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  height: 5rem;
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 -6px lighten($primary-color, 15%), 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 -2px lighten($primary-color, 10%), 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.2);
+  }
+  &:active {
+    transform: scale(1);
+    box-shadow: 0 -4px lighten($primary-color, 10%), 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.text-muted {
+  color: grey;
+}
+.text-green {
+  color: $primary-color
+}
+
+.mb {
+  margin-bottom: 1rem;
+}
